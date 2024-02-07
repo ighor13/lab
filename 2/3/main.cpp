@@ -3,12 +3,6 @@
 
 using namespace std;
 
-template <typename typeC> class Point
-{
-    int x;
-    int y;
-}
-
 template <typename typeC> bool checkequal(typeC x1,typeC y1,typeC x2,typeC y2,typeC x3,typeC y3)
 {
     if((x1==x2&&y1==y2)||(x1==x3&&y1==y3)||(x2==x3&&y2==y3))
