@@ -15,6 +15,6 @@ $(OBJS):
 	$(CC) $(CFLAGS) -c $(SOURCES)
 
 clean: 
-	$(RM) *.o $(TARGET)
+	@-$(RM) *.o $(TARGET)
 install:
 	cp ${TARGET} ${INSTDIR}
