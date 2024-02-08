@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
         cout<<"a=-11, b=2, x(a,b)="<<x(-11,2)<<endl;
         cout<<"a=2, b=-2, x(a,b)="<<x(2,-2)<<endl;
     }
-    catch(...)
+    catch(...) // но это вряд ли
     {
 	cout<<"функция не определена"<<endl;
     }
