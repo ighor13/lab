@@ -3,9 +3,24 @@
 
 using namespace std;
 
-template <typename typeC> bool checkequal(typeC x1,typeC y1,typeC x2,typeC y2,typeC x3,typeC y3)
+template <typename typeC> class Point
 {
-    if((x1==x2&&y1==y2)||(x1==x3&&y1==y3)||(x2==x3&&y2==y3))
+    public:
+	Point( typeC x, typeC y) { _x=x;_y=y; };
+	Point() {};
+	typeC &x( typeC x) { return _x=x; };
+	typeC &x() { return _x; };
+	typeC &y( typeC y) { return _y=y; };
+	typeC &y() { return _y; };
+
+    private:
+	typeC _x;
+	typeC _y;
+};
+
+template <typename typeC> bool checkequal(Point<typeC> p1, Point<typeC> p2, Point<typeC> p3)
+{
+    if((p1.x()==p2.x()&&p1.y()==p2.y())||(p1.x()==p3.x()&&p1.y()==p3.y())||(p2.x()==p3.x()&&p2.y()==p3.y()))
     {
 	cout<<"имеют совпадения, ";
 	return true;
@@ -13,12 +28,12 @@ template <typename typeC> bool checkequal(typeC x1,typeC y1,typeC x2,typeC y2,ty
     return false;
 }
 
-template<typename typeC> bool checkline(typeC x1,typeC y1,typeC x2,typeC y2,typeC x3,typeC y3)
+template<typename typeC> bool checkline(Point<typeC> p1, Point<typeC> p2, Point<typeC> p3)
 {
-    typeC k=(y1-y2)/(x1-x2);
-    typeC b=y1-k*x1;
-    typeC y=k*x3+b;
-    if(y3==y)
+    typeC k=(p1.y()-p2.y())/(p1.x()-p2.x());
+    typeC b=p1.y()-k*p1.x();
+    typeC y=k*p3.x()+b;
+    if(p3.y()==y)
     {
 	cout<<"лежат на одной прямой, ";
 	return true;
@@ -28,14 +43,15 @@ template<typename typeC> bool checkline(typeC x1,typeC y1,typeC x2,typeC y2,type
 
 int main(int argc, char* argv[])
 {
+
+
     typedef long double coord;
     typedef numeric_limits <coord> accuracy;
-
-    coord x1=1,y1=1,x2=M_PI,y2=M_PI,x3=7,y3=7;
-
+    Point<coord> p1(1,1),p2(M_PI,M_PI),p3(7,7);
+    
     cout.precision(accuracy::max_digits10 + 2);
-    cout<<"Точки x1="<<x1<<", y1="<<y1<<", x2="<<x2<<", y2="<<y2<<", x3="<<x3<<", y3="<<y3<<" ";
-    if(checkequal(x1,y1,x2,y2,x3,y3)||checkline(x1,y1,x2,y2,x3,y3)) // да, порядок выполнения не определён, но да/нет сработает в любом случае
+    cout<<"Точки x1="<<p1.x()<<", y1="<<p1.y()<<", x2="<<p2.x()<<", y2="<<p2.y()<<", x3="<<p3.x()<<", y3="<<p3.y()<<" ";
+    if(checkequal(p1,p2,p3)||checkline(p1,p2,p3)) // да, порядок выполнения не определён, но да/нет сработает в любом случае
 	cout<<"не ";
     cout<<"могут являться вершинами треугольника"<<endl;
 
