@@ -4,7 +4,7 @@ using namespace std;
 
 typedef unsigned long int natural;
 
-natural min(natural a, natural b, natural c)
+inline natural min(natural a, natural b, natural c)
 {
     natural m=a;
     if(b<m) m=b;
@@ -14,23 +14,20 @@ natural min(natural a, natural b, natural c)
 
 int main(int argc, char* argv[])
 {
-    natural a,b,c;
+    register natural a,b,c;
 
     cout<<"Input a:";
     cin>>a;
     cout<<"Input b:";
     cin>>b;
     cout<<"Input c:";
-    cin>>b;
+    cin>>c;
 
-    natural m=min(a,b,c);
-    
-    natural i,nod;
-    i=1;
+    register natural m=min(a,b,c),i=2,nod=1;
     
     do
 	if(a%i==0&&b%i==0&&c%i==0)
-	    nod=i;
+	    { nod=i; break ; }
     while(i++<m);
 
     cout<<endl<<"Наименьший общий делитель: "<<nod<<endl;
