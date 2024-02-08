@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace std;
-
 typedef int elem;
 
 int main(int argc, char* argv[])
