@@ -10,9 +10,9 @@ typedef long double typeP;
 
 typeP y(typeP x)
 {
-    if(x<0)
+    if(x<0) // логарифм определён при x>0
 	throw (char*)"x не может быть меньше 0";
-    if((1/(2*log(x))+powl(sin(powl(x,2)),2))==0) // знаменатель
+    if((1/(2*log(x))+powl(sin(powl(x,2)),2))==0) // знаменатель не можеть быть = 0
 	throw (char*)"знаменатель дроби равен 0";
     return
 	(
