@@ -5,7 +5,7 @@ typedef int elem;
 int main(int argc, char* argv[])
 {
     const unsigned m=3; //7
-    const unsigned n=3; //7
+    const unsigned n=4; //7
 
     elem M[m][n];
     
