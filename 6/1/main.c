@@ -16,6 +16,11 @@ int main(int argc, char* argv[])
 	    scanf("%f",&M[i][j]);
 	}
 
+    elem* e=M;
+    for(unsigned i=0;i<m-1;i++)
+	for(unsigned j=0;j<n;j++)
+	    *(e+m*i+j)-=*(e+(m-1)*n+j);
+
     for(unsigned i=0;i<m;i++)
     {
 	for(unsigned j=0;j<n;j++)

@@ -1,4 +1,4 @@
-CC	= clang++
+CC	= clang
 INSTDIR = ./
 CFLAGS	= -w -I. -DDEBUG -O3
 LIBDIR  = 
