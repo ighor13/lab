@@ -43,15 +43,13 @@ template<typename typeC> bool checkline(Point<typeC> p1, Point<typeC> p2, Point<
 
 int main(int argc, char* argv[])
 {
-
-
     typedef long double coord;
     typedef numeric_limits <coord> accuracy;
     Point<coord> p1(1,1),p2(M_PI,M_PI),p3(7,7);
     
     cout.precision(accuracy::max_digits10 + 2);
     cout<<"Точки x1="<<p1.x()<<", y1="<<p1.y()<<", x2="<<p2.x()<<", y2="<<p2.y()<<", x3="<<p3.x()<<", y3="<<p3.y()<<" ";
-    if(checkequal(p1,p2,p3)||checkline(p1,p2,p3)) // да, порядок выполнения не определён, но да/нет сработает в любом случае
+    if(checkequal(p1,p2,p3)||checkline(p1,p2,p3)) // да, порядок выполнения не определён, но на да/нет сработает в любом случае
 	cout<<"не ";
     cout<<"могут являться вершинами треугольника"<<endl;
 

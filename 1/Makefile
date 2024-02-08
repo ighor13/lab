@@ -1,7 +1,7 @@
 CC	= clang
 INSTDIR = ./
-CFLAGS	= -w -I/usr/local/include -I. -DDEBUG -O3
-LIBDIR  = -L/usr/local/lib -Wl,--rpath -Wl,/usr/local/lib
+CFLAGS	= -w -I. -DDEBUG -O3
+LIBDIR  = 
 LIB     = 
 SOURCES	= main.c
 OBJS	= main.o
