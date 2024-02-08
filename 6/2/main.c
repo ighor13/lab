@@ -4,8 +4,8 @@ typedef int elem;
 
 int main(int argc, char* argv[])
 {
-    const unsigned m=3; //7
-    const unsigned n=4; //7
+    const unsigned m=4; //7
+    const unsigned n=3; //7
 
     elem M[m][n];
     
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     {
 	int yn=-1;
         for(unsigned i=0;i<m-1;i++)
-            if(*(e+m*i+j)>*(e+m*(i+1)+j))
+            if(*(e+n*i+j)>*(e+n*(i+1)+j))
         	yn=0;
 	if(yn)
 	    printf("%10c",'Y');
