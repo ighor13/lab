@@ -8,7 +8,7 @@ typedef unsigned long int natural;
 
 const real epsilon=0.2E-5;
 
-real fact(natural n) // да, факториал - натуральное число, но происходит потеря точности при больших n
+real fact(natural n) // да, факториал - натуральное число, но происходит потеря точности при больших n для unsigned long int
 {
 	if(n==0)
 	    return 1;
