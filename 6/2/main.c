@@ -16,6 +16,23 @@ int main(int argc, char* argv[])
 	    scanf("%d",&M[i][j]);
 	}
 
+
+    elem* e=M;
+    for(unsigned j=0;j<n;j++)
+    {
+	int yn=-1;
+        for(unsigned i=0;i<m-1;i++)
+            if(*(e+m*i+j)>*(e+m*(i+1)+j))
+        	yn=0;
+	if(yn)
+	    printf("%10c",'Y');
+	else
+	    printf("%10c",'N');
+	
+    }
+
+    printf("\n");
+
     for(unsigned i=0;i<m;i++)
     {
 	for(unsigned j=0;j<n;j++)
