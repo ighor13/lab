@@ -5,8 +5,6 @@ using namespace std;
 
 typedef long double typeP;
 
-typedef numeric_limits <typeP> accuracy;
-
 typeP x(typeP a,typeP b)
 {
     return
@@ -22,6 +20,7 @@ typeP x(typeP a,typeP b)
 
 int main(int argc, char* argv[])
 {
+    typedef numeric_limits <typeP> accuracy;
     cout.precision(accuracy::max_digits10 + 2);
     try
     {
