@@ -27,7 +27,8 @@ int main(int argc, char* argv[])
     for(unsigned i=0;i<m;i++)
     {
 	for(unsigned j=0;j<n;j++)
-	    printf("%10.3f",M[i][j]);
+//	    printf("%10.3f",M[i][j]);
+            printf("%10.3f",*(((elem*)(M+i))+j));
 
 	printf("\n");
     }
