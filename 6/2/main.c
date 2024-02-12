@@ -36,10 +36,13 @@ int main(int argc, char* argv[])
     for(unsigned i=0;i<m;i++)
     {
 	for(unsigned j=0;j<n;j++)
-	    printf("%10d",M[i][j]);
+//	    printf("%10d",M[i][j]);
+	    printf("%10d",*(((elem*)(M+i))+j));
 
 	printf("\n");
     }
+
+
     
     return 0;
 }
