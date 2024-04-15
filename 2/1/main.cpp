@@ -16,9 +16,9 @@ typeP y(typeP x)
 	throw (char*)"знаменатель дроби равен 0";
     return
 	(
-	    (2*cos(x-PI/6)+sqrt(2))
+	    (2*cosl(x-PI/6)+sqrtl(2))
 	    /
-	    (1/(2*log(x))+powl(sin(powl(x,2)),2))
+	    (1/(2*logl(x))+powl(sinl(powl(x,2)),2))
 	)
 	*expl(3*x)
     ;
